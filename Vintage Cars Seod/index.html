@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>Vintage Automobile Museum | Classic & Rare Car Collection</title>
+    <meta name="description" content="Explore The Vintage Automobile Museum's curated collection of 16 legendary classic cars — from the 1906 Rolls-Royce Silver Ghost to the 1992 McLaren F1. Discover history, specs, and stories behind the world's most iconic automobiles." />
+    <meta name="keywords" content="vintage automobile museum, classic car museum, rare car collection, vintage cars, classic cars, car history, Ferrari 250 GTO, Bugatti Atlantic, McLaren F1, Porsche 911, automotive history" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="The Vintage Automobile Museum" />
+    <link rel="canonical" href="https://www.vintageautomuseum.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.vintageautomuseum.com/" />
+    <meta property="og:site_name" content="The Vintage Automobile Museum" />
+    <meta property="og:title" content="Vintage Automobile Museum | Classic & Rare Car Collection" />
+    <meta property="og:description" content="A curated exhibition of 16 legendary classic cars spanning from 1906 to 1992 — Rolls-Royce, Bugatti, Ferrari, Porsche, McLaren, and more." />
+    <meta property="og:image" content="https://www.vintageautomuseum.com/images/social-preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vintage Automobile Museum | Classic & Rare Car Collection" />
+    <meta name="twitter:description" content="A curated exhibition of 16 legendary classic cars spanning from 1906 to 1992 — Rolls-Royce, Bugatti, Ferrari, Porsche, McLaren, and more." />
+    <meta name="twitter:image" content="https://www.vintageautomuseum.com/images/social-preview.jpg" />
+
+    <!-- Favicon (replace with your own files) -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Structured Data: Museum -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Museum",
+      "name": "The Vintage Automobile Museum",
+      "description": "A curated collection of 16 legendary classic and vintage automobiles spanning from 1906 to 1992, including cars from Rolls-Royce, Bugatti, Ferrari, Porsche, Jaguar, and McLaren.",
+      "url": "https://www.vintageautomuseum.com/",
+      "image": "https://www.vintageautomuseum.com/images/social-preview.jpg",
+      "sameAs": []
+    }
+    </script>
+
+    <style>
+        /* --- RESET & BASE (From Golden Theme) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0e0a08;
+            color: #f2e7d5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- CONTAINER --- */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4vw;
+        }
+
+        /* --- HERO --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at 50% 30%, #2a1f18 0%, #0e0a08 70%);
+            position: relative;
+        }
+
+        #hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 10vw, 10rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroIn 1s ease forwards 0.2s;
+        }
+
+        #hero h1 span {
+            display: block;
+            color: #c9a44c;
+            font-style: italic;
+            font-size: clamp(2rem, 5vw, 5rem);
+        }
+
+        #hero .sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: #8d6b3f;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroIn 1s ease forwards;
+        }
+
+        @keyframes heroIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 4vh;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #b8a99a;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* --- DIVIDER --- */
+        .divider {
+            height: 1px;
+            width: 80%;
+            margin: 4rem auto;
+            background: linear-gradient(90deg, transparent, #8d6b3f, transparent);
+            opacity: 0.3;
+        }
+
+        /* --- INTRO --- */
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 4rem auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-style: italic;
+            color: #b8a99a;
+            padding: 0 4vw;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .intro.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- ERA HEADER --- */
+        .era-header {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            opacity: 0;
+            transform: translateY(30px) scale(0.97);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .era-header.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .era-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 6rem);
+            color: #c9a44c;
+            text-transform: uppercase;
+        }
+
+        .era-header .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #8d6b3f;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* --- CAR SECTION --- */
+        .car-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            padding: 4rem 4vw;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .car-section {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+            .car-section.reverse .car-image {
+                order: 2;
+            }
+            .car-section.reverse .car-details {
+                order: 1;
+            }
+        }
+
+        /* --- SCROLL ANIMATIONS (EXACTLY FROM GOLDEN THEME) --- */
+        .car-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .car-image img.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .car-details {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+
+        .car-details.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .car-details .brand {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: #c9a44c;
+        }
+
+        .car-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3vw, 3.5rem);
+            line-height: 1;
+            margin: 0.5rem 0;
+        }
+
+        .car-details .year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #8d6b3f;
+        }
+
+        .car-details .history {
+            margin: 1.5rem 0;
+            line-height: 1.8;
+            color: #b8a99a;
+            font-weight: 300;
+        }
+
+        .car-details .quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            border-left: 2px solid #c9a44c;
+            padding-left: 1.5rem;
+            color: #f2e7d5;
+            margin: 1.5rem 0;
+        }
+
+        .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            border-top: 1px solid rgba(141, 107, 63, 0.3);
+            padding-top: 1.5rem;
+        }
+
+        .specs .spec {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .specs .spec .label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #8d6b3f;
+        }
+
+        .specs .spec .value {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #f2e7d5;
+        }
+
+        .achievement-badge {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: #c9a44c;
+            text-transform: uppercase;
+        }
+
+        /* --- STATS --- */
+        #stats {
+            background: #1a1410;
+            padding: 4rem 4vw;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 5vw, 5rem);
+            color: #c9a44c;
+        }
+
+        .stat-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #8d6b3f;
+            margin-top: 0.5rem;
+        }
+
+        /* --- TIMELINE (with animations) --- */
+        #timeline {
+            padding: 4rem 4vw;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        #timeline h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 5vw, 5rem);
+            text-align: center;
+            color: #c9a44c;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        #timeline h2.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item {
+            border-left: 1px solid #8d6b3f;
+            padding-left: 2rem;
+            padding-bottom: 3rem;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #0e0a08;
+            border: 2px solid #c9a44c;
+            border-radius: 50%;
+        }
+
+        .timeline-item .year {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #c9a44c;
+        }
+
+        .timeline-item .title {
+            font-weight: 600;
+            margin: 0.3rem 0;
+        }
+
+        .timeline-item .desc {
+            color: #b8a99a;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000;
+            padding: 4rem 4vw 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(141, 107, 63, 0.2);
+        }
+
+        footer .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #f2e7d5;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        footer .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        footer .links a {
+            color: #b8a99a;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+        }
+
+        footer .links a:hover {
+            color: #c9a44c;
+        }
+
+        footer .copy {
+            font-size: 0.7rem;
+            color: rgba(242, 231, 213, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .car-image img {
+                height: 250px;
+            }
+            .specs {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section id="hero">
+        <span class="sub">Est. 2026</span>
+        <h1>The Vintage<br><span>Automobile Museum</span></h1>
+        <div class="scroll-down">Scroll to explore</div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- INTRO -->
+    <section class="intro">
+        "An automobile is not merely a machine; it is a rolling sculpture, a testament to human ingenuity, and a physical manifestation of an era's dreams and desires. Welcome to the definitive collection of motoring history."
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CARS -->
+    <div class="container" id="cars-container">
+        <!-- Cars will be injected here by JavaScript -->
+    </div>
+
+    <!-- STATS -->
+    <section id="stats">
+        <div class="stats-grid" id="stats-grid">
+            <div class="stat-item">
+                <div class="number" id="stat-cars">0</div>
+                <div class="label">Legendary Chassis</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" id="stat-hp">0</div>
+                <div class="label">Total Horsepower</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" id="stat-oldest">0</div>
+                <div class="label">Earliest Exhibit</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" id="stat-years">0</div>
+                <div class="label">Years of Innovation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+        <h2>Evolution of Speed</h2>
+        <div id="timeline-container"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo">THE VINTAGE AUTOMOBILE MUSEUM</div>
+        <div class="links">
+            <a href="#cars-container">Exhibitions</a>
+            <a href="#timeline">Archives</a>
+            <a href="#stats">Provenance</a>
+            <a href="#hero">Contact Curator</a>
+        </div>
+        <p class="copy">&copy; 2026 The Vintage Automobile Museum. Curated for history.</p>
+    </footer>
+
+    <script>
+        // --- DATA ---
+        const cars = [{
+            era: "Origins",
+            brand: "Rolls-Royce",
+            title: "Silver Ghost",
+            year: "1906",
+            country: "United Kingdom",
+            engine: "7.0L Inline-6",
+            horsepower: "50",
+            topspeed: "80 mph",
+            production: "7,874",
+            history: "Originally named the 40/50 h.p., chassis number 60551 was dubbed the 'Silver Ghost' due to its ghost-like quietness and aluminum paint. It cemented Rolls-Royce's reputation as the maker of 'The Best Car in the World' after completing a 14,371-mile non-stop endurance run.",
+            quote: "At 60 miles an hour the loudest noise in this new Rolls-Royce comes from the electric clock.",
+            achievement: "Endurance Legend",
+            image: "silver-ghost.jpg"
+        }, {
+            era: "Origins",
+            brand: "Bugatti",
+            title: "Type 57SC Atlantic",
+            year: "1936",
+            country: "France",
+            engine: "3.3L Supercharged Inline-8",
+            horsepower: "200",
+            topspeed: "124 mph",
+            production: "4",
+            history: "The absolute pinnacle of pre-war automotive design. Conceived by Jean Bugatti, the Atlantic is famous for its riveted dorsal seam, originally designed for Elektron alloy. It remains an unparalleled masterclass in Art Deco rolling sculpture.",
+            quote: "Nothing is too beautiful, nothing is too expensive.",
+            achievement: "Most Valuable",
+            image: "type-57-atlantic.jpg"
+        }, {
+            era: "Origins",
+            brand: "Alfa Romeo",
+            title: "8C 2900B",
+            year: "1937",
+            country: "Italy",
+            engine: "2.9L Twin-Supercharged Inline-8",
+            horsepower: "180",
+            topspeed: "110 mph",
+            production: "32",
+            history: "Built on a Grand Prix chassis, the 8C 2900B was the ultimate pre-war sports car. Featuring independent suspension and a transaxle, it dominated the Mille Miglia and represented the height of Italian engineering and Touring's Superleggera coachwork.",
+            quote: "A symphony of mechanical perfection draped in breathtaking aluminum.",
+            achievement: "Mille Miglia Winner",
+            image: "8c-2900b.jpg"
+        }, {
+            era: "Design Icons",
+            brand: "Mercedes-Benz",
+            title: "300 SL Gullwing",
+            year: "1954",
+            country: "Germany",
+            engine: "3.0L Inline-6",
+            horsepower: "215",
+            topspeed: "163 mph",
+            production: "1,400",
+            history: "Born from a race car, the 300 SL featured a revolutionary tubular spaceframe chassis that necessitated its iconic upward-opening 'Gullwing' doors. It was the fastest production car of its time and introduced direct fuel injection to consumer automobiles.",
+            quote: "A sports car that fell from the sky, rewriting the laws of aerodynamics and desire.",
+            achievement: "First Direct Injection",
+            image: "300sl-gullwing.jpg"
+        }, {
+            era: "Design Icons",
+            brand: "Jaguar",
+            title: "E-Type",
+            year: "1961",
+            country: "United Kingdom",
+            engine: "3.8L Inline-6",
+            horsepower: "265",
+            topspeed: "150 mph",
+            production: "72,000+",
+            history: "Unveiled at the Geneva Motor Show, the E-Type combined breathtaking aesthetics, high performance, and competitive pricing. Enzo Ferrari famously called it 'the most beautiful car ever made.' Its monocoque construction and disc brakes were revolutionary.",
+            quote: "The most beautiful car ever made.",
+            achievement: "Design Museum Icon",
+            image: "e-type.jpg"
+        }, {
+            era: "Grand Touring",
+            brand: "Aston Martin",
+            title: "DB5",
+            year: "1963",
+            country: "United Kingdom",
+            engine: "4.0L Inline-6",
+            horsepower: "282",
+            topspeed: "145 mph",
+            production: "1,059",
+            history: "Immortalized on the silver screen as the ultimate gentleman spy's transport, the DB5 is the quintessential British grand tourer. Carrozzeria Touring's Superleggera body over a robust British chassis created an icon of cool.",
+            quote: "Elegance with a license to thrill.",
+            achievement: "Cinema Legend",
+            image: "db5.jpg"
+        }, {
+            era: "Grand Touring",
+            brand: "Porsche",
+            title: "911 Carrera RS 2.7",
+            year: "1973",
+            country: "Germany",
+            engine: "2.7L Flat-6",
+            horsepower: "210",
+            topspeed: "152 mph",
+            production: "1,580",
+            history: "The most revered classic 911. Built for homologation, the RS 2.7 introduced the iconic 'ducktail' spoiler for aerodynamic stability. Stripped of excess weight, it offered a visceral, pure driving experience that defined Porsche's ethos.",
+            quote: "The ultimate synthesis of track capability and road usability.",
+            achievement: "First Ducktail",
+            image: "911-rs.jpg"
+        }, {
+            era: "Grand Touring",
+            brand: "Maserati",
+            title: "Ghibli SS",
+            year: "1969",
+            country: "Italy",
+            engine: "4.9L V8",
+            horsepower: "330",
+            topspeed: "174 mph",
+            production: "1,170",
+            history: "Designed by a young Giorgetto Giugiaro at Ghia, the Ghibli is characterized by its low, shark-like nose and sweeping roofline. The SS version featured a dry-sump 4.9L V8, making it a true continent-crushing Grand Tourer of the highest order.",
+            quote: "A masterpiece of aggressive elegance and brute force.",
+            achievement: "Design Masterpiece",
+            image: "ghibli-ss.jpg"
+        }, {
+            era: "Racing Heritage",
+            brand: "Ferrari",
+            title: "250 GTO",
+            year: "1962",
+            country: "Italy",
+            engine: "3.0L V12",
+            horsepower: "300",
+            topspeed: "174 mph",
+            production: "36",
+            history: "The Holy Grail of classic cars. Built for Group 3 Grand Touring Car racing, the 250 GTO achieved legendary status through its domination on the track and its breathtaking Scaglietti bodywork. It represents the zenith of front-engined racing development.",
+            quote: "A race car you could drive to the track, win, and drive home.",
+            achievement: "The Holy Grail",
+            image: "250-gto.jpg"
+        }, {
+            era: "Racing Heritage",
+            brand: "Ford",
+            title: "GT40",
+            year: "1964",
+            country: "USA / UK",
+            engine: "7.0L V8 (Mk II)",
+            horsepower: "485",
+            topspeed: "210 mph",
+            production: "105",
+            history: "Born from Henry Ford II's desire to crush Ferrari at Le Mans. The GT40, standing merely 40 inches tall, achieved a legendary 1-2-3 finish at the 1966 24 Hours of Le Mans, cementing America's place in European endurance racing.",
+            quote: "Go like hell.",
+            achievement: "Le Mans Dominator",
+            image: "gt40.jpg"
+        }, {
+            era: "American Legends",
+            brand: "Chevrolet",
+            title: "Corvette Sting Ray",
+            year: "1963",
+            country: "USA",
+            engine: "5.4L V8",
+            horsepower: "360",
+            topspeed: "142 mph",
+            production: "21,513",
+            history: "The iconic split-window coupe. Bill Mitchell's marine-inspired design introduced independent rear suspension to the Corvette line. The 1963 model year stands alone with its distinctive divided rear window, making it a highly sought-after design icon.",
+            quote: "America's sports car, refined and radically redefined.",
+            achievement: "Split-Window Icon",
+            image: "corvette-stingray.jpg"
+        }, {
+            era: "American Legends",
+            brand: "Shelby",
+            title: "Cobra 427",
+            year: "1965",
+            country: "USA / UK",
+            engine: "7.0L V8",
+            horsepower: "425",
+            topspeed: "164 mph",
+            production: "~348",
+            history: "Carroll Shelby's formula of stuffing a massive American V8 into a lightweight British AC Ace chassis reached its terrifying peak with the 427. It possessed a power-to-weight ratio that humiliated purebred European exotics.",
+            quote: "There is never enough horsepower... just not enough traction.",
+            achievement: "Brute Force Legend",
+            image: "cobra-427.jpg"
+        }, {
+            era: "American Legends",
+            brand: "Ford",
+            title: "Mustang Boss 429",
+            year: "1969",
+            country: "USA",
+            engine: "7.0L V8",
+            horsepower: "375",
+            topspeed: "128 mph",
+            production: "1,359",
+            history: "A homologation special designed solely to qualify Ford's massive 429 'semi-hemi' engine for NASCAR. Ford had to hire Kar Kraft just to widen the Mustang's shock towers to fit the gargantuan engine. The ultimate muscle car unicorn.",
+            quote: "An engine so massive they had to reconstruct the car around it.",
+            achievement: "NASCAR Homologation",
+            image: "mustang-boss.jpg"
+        }, {
+            era: "Golden Supercars",
+            brand: "Lamborghini",
+            title: "Miura",
+            year: "1966",
+            country: "Italy",
+            engine: "3.9L V12",
+            horsepower: "350",
+            topspeed: "171 mph",
+            production: "764",
+            history: "The car that invented the term 'Supercar'. Marcello Gandini's breathtaking design combined with a transverse mid-mounted V12 created an entirely new paradigm for high-performance road cars, completely catching Ferrari off guard.",
+            quote: "The original supercar that turned the automotive world upside down.",
+            achievement: "First Modern Supercar",
+            image: "miura.jpg"
+        }, {
+            era: "Golden Supercars",
+            brand: "McLaren",
+            title: "F1",
+            year: "1992",
+            country: "United Kingdom",
+            engine: "6.1L V12",
+            horsepower: "618",
+            topspeed: "240 mph",
+            production: "106",
+            history: "Gordon Murray's uncompromising vision of the ultimate road car. Featuring a central driving position, gold leaf heat shielding, and a bespoke naturally aspirated BMW V12. It held the production car speed record for over a decade.",
+            quote: "An engineering triumph that requires no compromise.",
+            achievement: "Ultimate Speed Record",
+            image: "mclaren-f1.jpg"
+        }];
+
+        // --- BUILD CARDS ---
+        const container = document.getElementById('cars-container');
+        let html = '';
+        const eraOrder = ["Origins", "Design Icons", "Grand Touring", "Racing Heritage", "American Legends", "Golden Supercars"];
+
+        eraOrder.forEach(era => {
+            const eraCars = cars.filter(c => c.era === era);
+            if (eraCars.length === 0) return;
+
+            html += `
+                <div class="era-header">
+                    <span class="label">Exhibition Era</span>
+                    <h2>${era}</h2>
+                    <div class="divider"></div>
+                </div>
+            `;
+
+            eraCars.forEach((car, index) => {
+                const reverse = index % 2 !== 0 ? 'reverse' : '';
+                html += `
+                    <div class="car-section ${reverse}">
+                        <div class="car-image">
+                            <img src="images/${car.image}" alt="${car.year} ${car.brand} ${car.title} - classic car on display at The Vintage Automobile Museum" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                        <div class="car-details">
+                            <div class="brand">${car.brand}</div>
+                            <h3>${car.title}</h3>
+                            <div class="year">${car.year} • ${car.country}</div>
+                            <p class="history">${car.history}</p>
+                            <div class="quote">"${car.quote}"</div>
+                            <div class="specs">
+                                <div class="spec">
+                                    <span class="label">Engine</span>
+                                    <span class="value">${car.engine}</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="label">Horsepower</span>
+                                    <span class="value">${car.horsepower} hp</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="label">Top Speed</span>
+                                    <span class="value">${car.topspeed}</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="label">Production</span>
+                                    <span class="value">${car.production}</span>
+                                </div>
+                            </div>
+                            ${car.achievement ? `<div class="achievement-badge">🏆 ${car.achievement}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+        });
+
+        container.innerHTML = html;
+
+        // --- STRUCTURED DATA: exhibit collection ---
+        (function injectCollectionStructuredData() {
+            const itemList = {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "The Vintage Automobile Museum Collection",
+                "itemListElement": cars.map((car, i) => ({
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "item": {
+                        "@type": "Product",
+                        "name": `${car.year} ${car.brand} ${car.title}`,
+                        "brand": { "@type": "Brand", "name": car.brand },
+                        "description": car.history,
+                        "image": `https://www.vintageautomuseum.com/images/${car.image}`
+                    }
+                }))
+            };
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(itemList);
+            document.head.appendChild(script);
+        })();
+
+        // --- STATS ---
+        const totalCars = cars.length;
+        const oldest = Math.min(...cars.map(c => parseInt(c.year)));
+        const newest = Math.max(...cars.map(c => parseInt(c.year)));
+        const totalHp = cars.reduce((acc, c) => acc + parseInt(c.horsepower), 0);
+
+        document.getElementById('stat-cars').textContent = totalCars;
+        document.getElementById('stat-hp').textContent = totalHp.toLocaleString();
+        document.getElementById('stat-oldest').textContent = oldest;
+        document.getElementById('stat-years').textContent = newest - oldest;
+
+        // --- TIMELINE ---
+        const timelineContainer = document.getElementById('timeline-container');
+        const timelineData = [...cars].sort((a, b) => parseInt(a.year) - parseInt(b.year)).filter((_, i) => i % 3 === 0);
+        let timelineHtml = '';
+        timelineData.forEach(car => {
+            timelineHtml += `
+                <div class="timeline-item">
+                    <div class="year">${car.year}</div>
+                    <div class="title">${car.brand} ${car.title}</div>
+                    <div class="desc">The introduction of the ${car.title} marked a pivotal moment in ${car.era.toLowerCase()}, fundamentally shifting the automotive landscape.</div>
+                </div>
+            `;
+        });
+        timelineContainer.innerHTML = timelineHtml;
+
+        // --- SCROLL ANIMATIONS ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        // Car sections: fade/slide in image + details
+        const carObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target.querySelector('img');
+                    const details = entry.target.querySelector('.car-details');
+                    if (img) img.classList.add('visible');
+                    if (details) details.classList.add('visible');
+                    carObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.car-section').forEach(section => {
+            carObserver.observe(section);
+        });
+
+        // Timeline items: fade/slide in as each one enters view (not all at once)
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
+
+        // Generic fade-up observer for simple single-element sections
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.intro, .era-header, #timeline h2').forEach(el => {
+            fadeObserver.observe(el);
+        });
+
+        // Stat items: stagger in together when the stats section is reached
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat-item').forEach((el, i) => {
+                        setTimeout(() => el.classList.add('visible'), i * 150);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.getElementById('stats');
+        if (statsSection) statsObserver.observe(statsSection);
+
+        // --- HERO SCROLL INDICATOR ---
+        document.querySelector('.scroll-down').addEventListener('click', () => {
+            document.querySelector('.intro').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
